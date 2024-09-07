@@ -90,19 +90,28 @@ class homesreen extends StatelessWidget {
           child: Row(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
+              // Image section
               Container(
                 width: 60,
                 height: 60,
-                color: Colors.grey[300],
+                decoration: BoxDecoration(
+                  color: Colors.grey[300],
+                  borderRadius: BorderRadius.circular(8),
+                  image: const DecorationImage(
+                    image: AssetImage('assets/images/tshirt.jpeg'),
+                    fit: BoxFit.cover,
+                  ),
+                ),
               ),
               const SizedBox(width: 12),
+
               Expanded(
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
                       title,
-                      style: TextStyle(
+                      style: const TextStyle(
                         fontSize: 18,
                         fontWeight: FontWeight.bold,
                       ),
@@ -112,24 +121,21 @@ class homesreen extends StatelessWidget {
                   ],
                 ),
               ),
+
               Column(
                 children: [
                   Row(
                     children: [
+                      const Text('0'),
                       IconButton(
                         onPressed: () {},
-                        icon: Icon(Icons.remove_circle_outline),
-                      ),
-                      Text('1'),
-                      IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.add_circle_outline),
+                        icon: const Icon(Icons.menu),
                       ),
                     ],
                   ),
                   Text(
                     '\$$price',
-                    style: TextStyle(
+                    style: const TextStyle(
                       fontSize: 18,
                       fontWeight: FontWeight.bold,
                     ),
